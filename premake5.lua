@@ -28,4 +28,30 @@ project "GoogleTest"
             "/MTd"
         }
 
-    
+project "GoogleMock"
+    kind "StaticLib"
+    language "C++"
+    cppdialect "c++20"
+
+    targetdir ("../../bin/" .. output_dir .. "/%{prj.name}")
+    objdir ("../../bin-obj/" .. output_dir .. "/%{prj.name}")
+
+    files {
+
+        "./googlemock/include/**.h"
+        "./googlemock/src/**.cc"
+    }
+
+    includedirs {
+
+        "./googlemock/include",
+        "./googlemock/include/gmock"
+    }
+
+    filter {"system:windows", "configurations:Debug"}
+        systemversion "latest"
+        staticruntime "on"
+        buildoptions {
+
+            "/MTd"
+        }
