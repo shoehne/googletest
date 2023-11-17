@@ -38,14 +38,15 @@ project "GoogleMock"
 
     files {
 
-        "./googlemock/include/**.h"
+        "./googlemock/include/**.h",
         "./googlemock/src/**.cc"
     }
 
     includedirs {
 
         "./googlemock/include",
-        "./googlemock/include/gmock"
+        "./googlemock/",
+        "./googletest/include"
     }
 
     filter {"system:windows", "configurations:Debug"}
