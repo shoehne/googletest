@@ -33,6 +33,7 @@ project "GoogleMock"
     kind "StaticLib"
     language "C++"
     cppdialect "c++20"
+    location "./"
 
     targetdir ("../../bin/" .. output_dir .. "/%{prj.name}")
     objdir ("../../bin-obj/" .. output_dir .. "/%{prj.name}")
