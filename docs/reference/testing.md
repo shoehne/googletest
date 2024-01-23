@@ -3,7 +3,7 @@
 <!--* toc_depth: 3 *-->
 
 This page lists the facilities provided by GoogleTest for writing test programs.
-To use them, include the header `gtest/gtest.h`.
+To use them, add `#include <gtest/gtest.h>`.
 
 ## Macros
 
@@ -1317,7 +1317,9 @@ tests.
 Initializes GoogleTest. This must be called before calling
 [`RUN_ALL_TESTS()`](#RUN_ALL_TESTS). In particular, it parses the command line
 for the flags that GoogleTest recognizes. Whenever a GoogleTest flag is seen, it
-is removed from `argv`, and `*argc` is decremented.
+is removed from `argv`, and `*argc` is decremented. Keep in mind that `argv`
+must terminate with a `NULL` pointer (i.e. `argv[argc]` is `NULL`), which is
+already the case with the default `argv` passed to `main`.
 
 No value is returned. Instead, the GoogleTest flag variables are updated.
 
