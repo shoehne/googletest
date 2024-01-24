@@ -18,6 +18,9 @@ bazel-testlogs
 *.VC.opendb
 *.suo
 *.user
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
 _ReSharper.Caches/
 Win32-Debug/
 Win32-Release/
